@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.UserMapper">
+
+    <cache eviction="FIFO" flushInterval="3600000" size="512" readOnly="true"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.User">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="client_type" property="clientType" />
+        <result column="client_name" property="clientName" />
+        <result column="id_type" property="idType" />
+        <result column="idcard_no" property="idcardNo" />
+        <result column="corporate" property="corporate" />
+        <result column="pp_bind_phone" property="ppBindPhone" />
+        <result column="corporate_idcard_no" property="corporateIdcardNo" />
+        <result column="phone" property="phone" />
+        <result column="need_audit" property="needAudit" />
+        <result column="birthday" property="birthday" />
+        <result column="sex" property="sex" />
+        <result column="idcard_address" property="idcardAddress" />
+        <result column="contact_people" property="contactPeople" />
+        <result column="contact_phone" property="contactPhone" />
+        <result column="contact_addr_nation" property="contactAddrNation" />
+        <result column="contact_addr_province" property="contactAddrProvince" />
+        <result column="contact_addr_city" property="contactAddrCity" />
+        <result column="contact_addr_nation_cn" property="contactAddrNationCn" />
+        <result column="contact_addr_province_cn" property="contactAddrProvinceCn" />
+        <result column="contact_addr_city_cn" property="contactAddrCityCn" />
+        <result column="address" property="address" />
+        <result column="email" property="email" />
+        <result column="ent_name" property="entName" />
+        <result column="ent_place" property="entPlace" />
+        <result column="support_channels" property="supportChannels" />
+        <result column="old" property="old" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, client_type AS clientType, client_name AS clientName, id_type AS idType, idcard_no AS idcardNo, corporate, pp_bind_phone AS ppBindPhone, corporate_idcard_no AS corporateIdcardNo, phone, need_audit AS needAudit, birthday, sex, idcard_address AS idcardAddress, contact_people AS contactPeople, contact_phone AS contactPhone, contact_addr_nation AS contactAddrNation, contact_addr_province AS contactAddrProvince, contact_addr_city AS contactAddrCity, contact_addr_nation_cn AS contactAddrNationCn, contact_addr_province_cn AS contactAddrProvinceCn, contact_addr_city_cn AS contactAddrCityCn, address, email, ent_name AS entName, ent_place AS entPlace, support_channels AS supportChannels, old, created, modified, version, flag
+    </sql>
+
+</mapper>

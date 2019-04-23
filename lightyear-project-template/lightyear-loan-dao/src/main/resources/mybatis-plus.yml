@@ -1,0 +1,10 @@
+########################################
+##     mybatis plus 默认配置           ##
+########################################
+mybatis-plus:
+  # mapper文件目录
+  mapperLocations: classpath:mapper/*Mapper.xml
+  # 别名包配置
+  typeAliasesPackage: com.pingpongx.lightyear.account.dao.domain
+  configuration:
+    cacheEnabled: true

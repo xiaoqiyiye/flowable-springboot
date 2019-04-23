@@ -1,0 +1,23 @@
+server:
+  port: 9998
+spring:
+  application:
+    name: service-lightyear-account
+  profiles:
+    active: dev
+  datasource:
+    druid:
+      # 配置是否开启配置中心数据源: true-根据connection-properties属性获取; false-根据url、username、password获取
+      enableConnectionProperties: true
+      connection-properties: config.file=https://dev-ppconfig.pingpongx.com/properties/pingpong_finance.properties
+      url: jdbc:mysql://localhost:3306/dev-mysql.pingpong.com-pingpong_finance?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true
+      username: root
+      password: 123
+  dubbo:
+    application: pingpongx-lightyear-account-dao
+    protocol:
+      name: dubbo
+      port: 20879
+    registry:
+      protocol: zookeeper
+      address: dev-zk1.pingpongx.com:2181

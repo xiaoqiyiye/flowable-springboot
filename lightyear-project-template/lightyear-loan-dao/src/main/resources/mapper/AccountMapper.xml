@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.AccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.Account">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="product" property="product" />
+        <result column="amt" property="amt" />
+        <result column="available_amt" property="availableAmt" />
+        <result column="status" property="status" />
+        <result column="repay_schema" property="repaySchema" />
+        <result column="apply_time" property="applyTime" />
+        <result column="rejected_time" property="rejectedTime" />
+        <result column="approved_time" property="approvedTime" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, product, amt, available_amt AS availableAmt, status, repay_schema AS repaySchema, apply_time AS applyTime, rejected_time AS rejectedTime, approved_time AS approvedTime, created, modified, version, flag
+    </sql>
+
+</mapper>

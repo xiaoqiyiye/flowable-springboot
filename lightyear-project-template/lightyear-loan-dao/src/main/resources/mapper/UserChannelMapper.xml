@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.UserChannelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.UserChannel">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="channel" property="channel" />
+        <result column="channel_acc_id" property="channelAccId" />
+        <result column="balance" property="balance" />
+        <result column="channel_pay_acc_id" property="channelPayAccId" />
+        <result column="channel_repay_acc_id" property="channelRepayAccId" />
+        <result column="idcard_no" property="idcardNo" />
+        <result column="bank_phone" property="bankPhone" />
+        <result column="bankcard_no" property="bankcardNo" />
+        <result column="bank_name" property="bankName" />
+        <result column="bank_account_name" property="bankAccountName" />
+        <result column="bank_account_type" property="bankAccountType" />
+        <result column="bank_no" property="bankNo" />
+        <result column="bank_branch_no" property="bankBranchNo" />
+        <result column="city_no" property="cityNo" />
+        <result column="amt" property="amt" />
+        <result column="available_amt" property="availableAmt" />
+        <result column="status" property="status" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, channel, channel_acc_id AS channelAccId, balance, channel_pay_acc_id AS channelPayAccId, channel_repay_acc_id AS channelRepayAccId, idcard_no AS idcardNo, bank_phone AS bankPhone, bankcard_no AS bankcardNo, bank_name AS bankName, bank_account_name AS bankAccountName, bank_account_type AS bankAccountType, bank_no AS bankNo, bank_branch_no AS bankBranchNo, city_no AS cityNo, amt, available_amt AS availableAmt, status, created, modified, version, flag
+    </sql>
+
+</mapper>

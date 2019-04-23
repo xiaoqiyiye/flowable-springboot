@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-lightyear-account
+  profiles:
+    active: @ppx.environment@
+  datasource:
+    druid:
+      connection-properties: config.file=@ppx.ppconfig.domain@/properties/pingpong_finance.properties
+  dubbo:
+    application: service-lightyear-account
+    protocol:
+      name: dubbo
+      port: @spring.dubbo.protocol.port@
+    registry:
+      protocol: zookeeper
+      address: @spring.dubbo.registry.address@
+    scan: com.pingpongx.lightyear.account.service
+  rocketmq:
+    namesrvAddr: @spring.rocketmq.namesrvAddr@
+    producer:
+      instanceName: lightyearAccountInstance
+      producerGroup: lightyearAccountGroup
+    consumer:
+      instanceName: lightyearAccountInstance
+      consumerGroup: lightyearAccountGroup
+      subscribe: LIGHTYEAR_ACCOUNT:*
+server:
+  port: 9090

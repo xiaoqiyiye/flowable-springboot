@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+	<property name="contextName" value="service-lightyear-account" />
+	<contextName>${contextName}</contextName> 
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%cn %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/data/project/${contextName}/logs/log.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>/data/project/${contextName}/logs/log-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+			<maxHistory>60</maxHistory>
+			<maxFileSize>20MB</maxFileSize>
+			<totalSizeCap>4GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%cn %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 测试环境+开发环境 -->
+    <springProfile name="dev,test">
+        <logger name="com.pingpongx.lightyear" level="DEBUG"/>
+        <logger name="com.pingpongx.lightyear" level="DEBUG"/>
+    </springProfile>
+    
+    <!-- 生产环境 -->
+    <springProfile name="production">
+        <logger name="com.pingpongx.lightyear" level="INFO"/>
+        <logger name="com.pingpongx.lightyear" level="INFO"/>
+    </springProfile>
+    
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile"/>
+	</root>
+	
+</configuration>

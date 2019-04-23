@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.UserAccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.UserAccount">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="id_type" property="idType" />
+        <result column="id_no" property="idNo" />
+        <result column="bankcard_no" property="bankcardNo" />
+        <result column="bank_name" property="bankName" />
+        <result column="bank_phone" property="bankPhone" />
+        <result column="phone" property="phone" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="flag" property="flag" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, id_type AS idType, id_no AS idNo, bankcard_no AS bankcardNo, bank_name AS bankName, bank_phone AS bankPhone, phone, created, modified, flag, version
+    </sql>
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.PProductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.PProduct">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="desc" property="desc" />
+        <result column="type" property="type" />
+        <result column="interest_rate" property="interestRate" />
+        <result column="overdue_interest_rate" property="overdueInterestRate" />
+        <result column="interest_mode" property="interestMode" />
+        <result column="fee_rate" property="feeRate" />
+        <result column="period" property="period" />
+        <result column="period_unit" property="periodUnit" />
+        <result column="min_period" property="minPeriod" />
+        <result column="max_period" property="maxPeriod" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, name, desc, type, interest_rate AS interestRate, overdue_interest_rate AS overdueInterestRate, interest_mode AS interestMode, fee_rate AS feeRate, period, period_unit AS periodUnit, min_period AS minPeriod, max_period AS maxPeriod, created, modified, version, flag
+    </sql>
+
+</mapper>

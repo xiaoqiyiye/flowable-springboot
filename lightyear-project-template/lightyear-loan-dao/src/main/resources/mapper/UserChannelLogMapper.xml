@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.UserChannelLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.UserChannelLog">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="channel" property="channel" />
+        <result column="before_status" property="beforeStatus" />
+        <result column="after_status" property="afterStatus" />
+        <result column="operate_type" property="operateType" />
+        <result column="operate_reason" property="operateReason" />
+        <result column="operate_note" property="operateNote" />
+        <result column="operate_time" property="operateTime" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, channel, before_status AS beforeStatus, after_status AS afterStatus, operate_type AS operateType, operate_reason AS operateReason, operate_note AS operateNote, operate_time AS operateTime, created, modified, version, flag
+    </sql>
+
+</mapper>

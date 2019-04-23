@@ -1,0 +1,75 @@
+#########################################################
+##            Mybatis Plus 自动生成器配置模版            ##
+#########################################################
+mybatis-plus:
+  generator:
+    # 开启生成器功能
+    enabled: true
+    # 代码生成作者
+    author: linya
+    # 代码生成所在工程路径
+    projectPath: /Users/linya/myroot/gitporject/lightyear-account/
+    # 数据库驱动类
+    driverClassName: com.mysql.jdbc.Driver
+    # 数据库URL
+    url: jdbc:mysql://localhost:3306/dev-mysql.pingpong.com-pingpong_finance?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: 123
+    # 是否开启activeRecord模式
+    enableActiveRecord: false
+    # 是否开启文件重写模式
+    enableFileOverride: false
+    # 配置dao工程(实体类和Mapper接口代码生成在dao工程中)
+    dao:
+      # 开启是否生成
+      enable: true
+      # dao工程名称
+      projectName: lightyear-account-dao
+      # dao父包
+      packageParent: com.pingpongx.lightyear.account
+      # 生成实体类所在包(最终包位置=packageParent+entityPackage)
+      entityPackage: dao.domain
+      # 实体父类
+      superEntityClass: com.pingpongx.lightyear.account.dao.domain.BaseDomain
+      # 实体父类字段
+      superEntityColumns: id,created,modified,flag,version
+      # 生成Mapper接口所在的包(最终包位置=packageParent+mapperPackage)
+      mapperPackage: dao.mapper
+      # Mapper接口是否添加@Mapper注解
+      enableMapperAnnotation: true
+    # 配置Mapper XML(Mapper XML存放在dao工程resources资源文件夹)
+    xml:
+      # 开启是否生成
+      enable: true
+      # xml工程名称(可以指定dao工程名称)
+      projectName: lightyear-account-dao
+      # XML文件父目录名称(例如: mapper)
+      packageParent:
+      # xml文件具体文件夹名称(可以省略)
+      xmlPackage: mapper
+    # 配置Service工程
+    service:
+      # 开启是否生成
+      enable: true
+      # service工程名称
+      projectName: lightyear-account-service
+      # service父包
+      packageParent: com.pingpongx.lightyear.account
+      # service接口包
+      servicePackage: service.service
+      # service实现类包
+      serviceImplPackage: service.service.impl
+    # 配置Controller工程
+    controller:
+      # 开启是否生成
+      enable: false
+      # controller工程名称
+      projectName: lightyear-account-controller
+      # controller父包
+      packageParent: com.pingpongx.lightyear.account.controller
+      # controller实现类包(最终包位置=packageParent+controllerPackage)
+      controllerPackage: controller
+    # 需要自动生成代码的表名称(多个表用逗号分割)
+    tables: user_client_associate

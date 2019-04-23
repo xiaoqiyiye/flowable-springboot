@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingpongx.lightyear.account.dao.mapper.UserBankcardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pingpongx.lightyear.account.dao.domain.UserBankcard">
+        <id column="id" property="id" />
+        <result column="client_id" property="userId" />
+        <result column="bankcard_no" property="bankcardNo" />
+        <result column="reserved_phone" property="reservedPhone" />
+        <result column="account_type" property="accountType" />
+        <result column="account_name" property="accountName" />
+        <result column="bank_no" property="bankNo" />
+        <result column="relate_bank_id" property="relateBankId" />
+        <result column="bank_name" property="bankName" />
+        <result column="bank_address" property="bankAddress" />
+        <result column="branch_no" property="branchNo" />
+        <result column="branch_name" property="branchName" />
+        <result column="city_no" property="cityNo" />
+        <result column="related_uid" property="relatedUid" />
+        <result column="in_use" property="inUse" />
+        <result column="created" property="created" />
+        <result column="modified" property="modified" />
+        <result column="version" property="version" />
+        <result column="flag" property="flag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="BaseColumnList">
+        id, client_id AS userId, bankcard_no AS bankcardNo, reserved_phone AS reservedPhone, account_type AS accountType, account_name AS accountName, bank_no AS bankNo, relate_bank_id AS relateBankId, bank_name AS bankName, bank_address AS bankAddress, branch_no AS branchNo, branch_name AS branchName, city_no AS cityNo, related_uid AS relatedUid, in_use AS inUse, created, modified, version, flag
+    </sql>
+
+</mapper>
